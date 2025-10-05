@@ -29,7 +29,7 @@ public class AdminController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping
-    @PreAuthorize("hasRole('SUPER_ADMIN_ROLE')")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     public User createAdministrator(@RequestBody User newAdminUser) {
         Optional<Role> optionalRole = roleRepository.findByName(RoleEnum.USER);
 
